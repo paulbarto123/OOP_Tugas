@@ -160,13 +160,13 @@ namespace OOP_Tugas
         {
             Console.WriteLine("Input Your Height (cm)");
         }
-        public float Bmi(float weight, float height)
+        public double Bmi(double weight, double height)
         {
             if (height == 0)
             {
                 throw new Exception("Something Bad happend");
             }
-            float weightcalculation = weight / ((height * height) / 10000);
+            double weightcalculation = Math.Round((weight / ((height * height)/ 10000)),1);
             return weightcalculation;
         }
         public void BMIInfo(float bmi)
@@ -300,7 +300,7 @@ namespace OOP_Tugas
                 float w = bmi.ReqInputFloat();
                 bmi.AskHeight();
                 float h = bmi.ReqInputFloat();
-                float bmiSum = bmi.Bmi(w, h);
+                double bmiSum = bmi.Bmi(w, h);
                 bmi.BMIInfo(bmiSum);
             }
             catch (Exception e)
